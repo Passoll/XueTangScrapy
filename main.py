@@ -1,4 +1,4 @@
-# Author Ayyyse
+# Author Ayyyse--passo
 
 import requests
 import json
@@ -7,8 +7,8 @@ import time
 
 #-------------Please fill below
 
-# https://www.xuetangx.com/learn/thu08281002136/thu08281002136/12424683/video/23293273     11
-# https://www.xuetangx.com/learn/THU00001001632/THU00001001632/12423821/exercise/23218549    36
+# https://www.xuetangx.com/learn/thu08281002136/thu08281002136/12424683/video/23293273
+# https://www.xuetangx.com/learn/THU00001001632/THU00001001632/12423821/exercise/23218549
 # Any page related to the class
 url_page = 'https://www.xuetangx.com/learn/thu08281002136/thu08281002136/12424683/video/23293273'
 # your own cookie
@@ -33,6 +33,7 @@ headers = {
     'referer': 'https://www.xuetangx.com/learn/',
     'cookie': cookies,
 }
+
 pat = re.compile('[^/]+')
 cid = re.findall(pat,url_page)[5]
 sign = re.findall(pat,url_page)[4]
@@ -42,8 +43,6 @@ params = (
     ('sign', sign),
 )
 
-# response = requests.get('https://next.xuetangx.com/api/v1/lms/exercise/get_exercise_list/2218455/', headers=headers, params=params)
-# response = requests.get('https://www.xuetangx.com/api/v1/lms/exercise/problem_apply/', headers=headers)
 response = requests.get('https://www.xuetangx.com/api/v1/lms/learn/course/chapter', headers=headers, params=params)
 leafdict = json.loads(response.text)
 
@@ -78,3 +77,4 @@ for key,value in search_list.items():
 with open(out_name, "w",encoding='utf-8') as f:
     json.dump(out, f, indent=4, ensure_ascii=False)
 print(out)
+print(‘success!’)
