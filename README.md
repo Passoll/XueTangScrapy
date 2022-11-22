@@ -1,5 +1,5 @@
 # XueTangScrapy
-爬取学堂在线课程视频的字幕
+爬取学堂在线课程视频的字幕Caption Scrapy
 
 ## Usage
 
@@ -10,3 +10,4 @@
 3. get your own file name done
 4. Hit play!
 
+ps. This has nothing to do with the answer!!! Only the Caption is available for your ctrl F work
